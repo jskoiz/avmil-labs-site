@@ -1,17 +1,162 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+const year = new Date().getFullYear();
+const services = [
+  { title: 'Digital Strategy', desc: 'Positioning, messaging, and an execution plan you can actually ship.' },
+  { title: 'Web Development', desc: 'Fast, modern sites (Astro/Next) with clean UX and measurable performance.' },
+  { title: 'Software Delivery', desc: 'Internal tools, automations, and product builds from MVP to scale.' },
+  { title: 'Growth + Content', desc: 'SEO, paid, social, and content systems that compound over time.' },
+];
+const steps = [
+  { k: '01', t: 'Discover', d: 'We map goals, users, constraints, and what “win” means.' },
+  { k: '02', t: 'Design', d: 'Wireframes → UI → copy. Tight loops, no bloat.' },
+  { k: '03', t: 'Build', d: 'Astro-first engineering, analytics-ready, deployable from day one.' },
+  { k: '04', t: 'Launch', d: 'Vercel deploy, Cloudflare DNS, monitoring, and iteration.' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <div class="pointer-events-none fixed inset-0 bg-grid opacity-35"></div>
+
+  <header class="relative">
+    <div class="mx-auto container px-6 pt-10">
+      <nav class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur">
+        <a class="flex items-center gap-3" href="#top">
+          <div class="h-9 w-9 rounded-xl bg-gradient-to-tr from-cyan-400/80 via-indigo-400/70 to-fuchsia-400/80"></div>
+          <div class="leading-tight">
+            <div class="text-sm font-semibold tracking-wide">AVMIL LABS</div>
+            <div class="text-xs text-slate-300">Honolulu, Hawai‘i</div>
+          </div>
+        </a>
+        <div class="hidden items-center gap-6 text-sm text-slate-200 md:flex">
+          <a href="#services" class="hover:text-white">Services</a>
+          <a href="#work" class="hover:text-white">Work</a>
+          <a href="#process" class="hover:text-white">Process</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </div>
+        <a href="#contact" class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-slate-100">Get in touch</a>
+      </nav>
+
+      <section id="top" class="mt-16 grid gap-10 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            Draft redesign — Astro + Vercel
+          </p>
+          <h1 class="mt-5 text-balance text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
+            Digital media + software,
+            grounded in Hawai‘i.
+            <span class="text-slate-300">Built for the pace of now.</span>
+          </h1>
+          <p class="mt-5 text-pretty text-lg text-slate-300">
+            AVMIL LABS helps teams ship modern web experiences, digital marketing systems, and software that drives outcomes.
+            No one-size-fits-all—just pragmatic strategy and clean execution.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#contact" class="rounded-xl bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-400 px-5 py-3 text-sm font-semibold text-slate-950 hover:opacity-95">Start a project</a>
+            <a href="#services" class="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-white/10">See services</a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+            <div>
+              <div class="text-2xl font-semibold">Fast</div>
+              <div class="text-xs text-slate-300">Lean builds</div>
+            </div>
+            <div>
+              <div class="text-2xl font-semibold">Clean</div>
+              <div class="text-xs text-slate-300">Modern UX</div>
+            </div>
+            <div>
+              <div class="text-2xl font-semibold">Measurable</div>
+              <div class="text-xs text-slate-300">Outcomes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-tr from-white/10 to-white/0 blur-2xl"></div>
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div class="flex items-center justify-between">
+              <div class="text-sm text-slate-200">Capabilities</div>
+              <div class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">v0 draft</div>
+            </div>
+            <div class="mt-6 grid gap-3">
+              <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
+                <div class="text-xs text-slate-400">Web</div>
+                <div class="mt-1 font-medium">Astro, Next.js, performance, SEO</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
+                <div class="text-xs text-slate-400">Marketing</div>
+                <div class="mt-1 font-medium">Content systems, campaigns, analytics</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-4">
+                <div class="text-xs text-slate-400">Software</div>
+                <div class="mt-1 font-medium">Automations, dashboards, internal tools</div>
+              </div>
+              <a id="contact" href="mailto:hello@avmillabs.com" class="mt-2 block rounded-xl bg-white px-5 py-3 text-center text-sm font-semibold text-slate-950 hover:bg-slate-100">Email hello@avmillabs.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main class="relative">
+    <section id="services" class="mx-auto container mt-20 px-6">
+      <h2 class="text-2xl font-semibold">Services</h2>
+      <p class="mt-2 max-w-2xl text-slate-300">A holistic toolkit: strategy → build → launch → iterate.</p>
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        {services.map((s) => (
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div class="text-lg font-semibold">{s.title}</div>
+            <div class="mt-2 text-sm text-slate-300">{s.desc}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="work" class="mx-auto container mt-20 px-6">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-2xl font-semibold">Work (sample)</h2>
+          <p class="mt-2 max-w-2xl text-slate-300">Placeholder projects for the draft — swap in real case studies.</p>
+        </div>
+      </div>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {[1,2,3].map((i) => (
+          <div class="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div class="flex items-center justify-between">
+              <div class="text-lg font-semibold">Project {i}</div>
+              <div class="h-2 w-2 rounded-full bg-cyan-300/80 opacity-0 transition group-hover:opacity-100"></div>
+            </div>
+            <div class="mt-2 text-sm text-slate-300">Outcome-driven web + marketing execution.</div>
+            <div class="mt-6 h-24 rounded-xl bg-gradient-to-tr from-cyan-400/20 via-indigo-400/10 to-fuchsia-400/10"></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="process" class="mx-auto container mt-20 px-6 pb-20">
+      <div class="rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 to-white/0 p-8 backdrop-blur">
+        <h2 class="text-2xl font-semibold">Process</h2>
+        <p class="mt-2 max-w-2xl text-slate-300">Simple phases. Clear deliverables. No mystery meat timelines.</p>
+        <div class="mt-8 grid gap-4 md:grid-cols-4">
+          {steps.map((s) => (
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div class="text-xs text-slate-400">{s.k}</div>
+              <div class="mt-2 font-semibold">{s.t}</div>
+              <div class="mt-2 text-sm text-slate-300">{s.d}</div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-10 flex flex-wrap items-center justify-between gap-4">
+          <div class="text-sm text-slate-300">© {year} AVMIL LABS LLC (draft)</div>
+          <div class="flex gap-4 text-sm">
+            <a class="text-slate-300 hover:text-white" href="/">Privacy</a>
+            <a class="text-slate-300 hover:text-white" href="/">Terms</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
