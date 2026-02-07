@@ -3,8 +3,8 @@ import '../styles/global.css';
 
 interface Props { title?: string; description?: string; }
 const {
-  title = 'AVMIL LABS — Digital Media & Software',
-  description = 'Digital marketing, web development, and software development—built with a Hawaii-grounded, global mindset.'
+  title = 'AVMIL LABS - Digital Media Company in Honolulu, Hawaii',
+  description = "Digital marketing, web development, and software development — built for today's fast-paced, tech-forward landscape."
 } = Astro.props;
 ---
 <!doctype html>
@@ -13,7 +13,6 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#030712" />
     <title>{title}</title>
   </head>
   <body>
